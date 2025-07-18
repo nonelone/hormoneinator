@@ -28,7 +28,7 @@ The software by default shows reference level based on a simplified AFAB hormone
 
 >    \# Change this variable to change whether you want a reference for AFAB or AMAB individuals
 >
->    target_norm = 1
+>    target_norm = 0
 >
 >    \# Target norms:
 >
