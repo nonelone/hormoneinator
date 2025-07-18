@@ -2,7 +2,7 @@
 
 This is a simple Python script `(Python v3.13.5)`, used to graph users hormone levels against AFAB norms.
 
-**This software is not a medical software! The hormone level norms have been taken from the Internet (and people do lie out there). The author does not claim to be a medical professional. Always consult with an medical proffesional.**
+**This is not a medical software! The author does not claim to be a medical professional. Always consult your hormone levels with your doctor.** This software is used only to graph the levels to show change in time. The norms are simplified, as hormone levels in AFAB individuals usualy vary depending on multiple factors.
 
 
 ## Usage
