@@ -2,6 +2,7 @@
 
 This is a simple Python script `(Python v3.13.5)`, used to graph users hormone levels against AFAB norms.
 
+<img width="75%" height="75%" alt="a graph with mock data" src="https://github.com/user-attachments/assets/10b6c704-4fa9-4a5d-a2cf-724259aba74b" />
 
 
 ### This is not a medical software!
