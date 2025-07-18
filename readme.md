@@ -21,3 +21,19 @@ The software uses a `data.csv` file that contains all the data used to graph. Yo
 > "30.0","20.0","50.0","15.0","5.01.2025"
 
 Would mean that on fifth of January 2025, the user had 30.0 pg/ml of estrogen, 20.0 ng/ml of prolactin, 50.0 ng/dl of testosterone and 15.0 ng/ml of progesterone.
+
+## Configuration
+
+The software by default shows reference level based on a simplified AFAB hormone level. It can also show reference based on a simplified AMAB hormone level or no reference at all. To do so, the user must change the app.py file, in the folowing way:
+
+>    \# Change this variable to change whether you want a reference for AFAB or AMAB individuals
+>
+>    target_norm = 1
+>
+>    \# Target norms:
+>
+>    \# 0 = AFAB (for transfemme)
+>
+>    \# 1 = AMAB (for transmasc)
+>
+>    \# 2 = no reference

@@ -3,6 +3,20 @@ import matplotlib.pyplot as plt
 import os
 
 def main():
+    # Change this variable to change whether you want a reference for AFAB or AMAB individuals
+
+    target_norm = 1
+
+    # Target norms:
+    # 0 = AFAB (for transfemme)
+    # 1 = AMAB (for transmasc)
+    # 2 = no reference
+
+    norms = {
+        0 : [[30,400],[4,40],[15,70],[2,25]],
+        1 : [[10,50],[4,15],[300,1000],[0,1]],
+        2: [[0,0],[0,0],[0,0],[0,0]]
+    }
 
     # Check if data.csv file exists in project directory
     if not os.path.isfile("data.csv"):
@@ -17,7 +31,7 @@ def main():
 
     # Estrogen subplot
     plt.subplot(2,2,1)
-    plt.axhspan(30, 400, 0, 1, color="#00ff0030") # Estrogen reference
+    plt.axhspan(norms[target_norm][0][0], norms[target_norm][0][1], 0, 1, color="#00ff0030") # Estrogen reference
     plt.plot(df['Date'], df['Estrogen (pg/ml)'], color="g", label="Estrogen (pg/ml)")
 
     # Boilerplate for each subplot: show grid, legend, and appropriate title
@@ -27,7 +41,7 @@ def main():
 
     # Prolactin subplot
     plt.subplot(2,2,2)
-    plt.axhspan(4, 40, 0, 1, color="#0000ff30") # Prolactin reference
+    plt.axhspan(norms[target_norm][1][0], norms[target_norm][1][1], 0, 1, color="#0000ff30") # Prolactin reference
     plt.plot(df['Date'], df['Prolactin (ng/ml)'], color="b", label="Prolactin (ng/ml)")
 
     plt.grid()
@@ -36,7 +50,7 @@ def main():
 
     # Testosterone subplot
     plt.subplot(2,2,3)
-    plt.axhspan(15, 70, 0, 1, color="#ff000030") # Testosterone reference
+    plt.axhspan(norms[target_norm][2][0], norms[target_norm][2][1], 0, 1, color="#ff000030") # Testosterone reference
     plt.plot(df['Date'], df['Testosterone (ng/dl)'], color="r", label="Testosterone (ng/dl)")
 
     plt.grid()
@@ -45,7 +59,7 @@ def main():
 
     # Progesterone subplot
     plt.subplot(2,2,4)
-    plt.axhspan(2, 25, 0, 1, color="#ff00ff30") # Progesterone reference
+    plt.axhspan(norms[target_norm][3][0], norms[target_norm][3][1], 0, 1, color="#ff00ff30") # Progesterone reference
     plt.plot(df['Date'], df['Progesterone (ng/ml)'], color="#ff00ff", label="Progesterone (ng/ml)")
 
     plt.grid()
